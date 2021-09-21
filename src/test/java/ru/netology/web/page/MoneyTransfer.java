@@ -39,6 +39,5 @@ public class MoneyTransfer {
     public DashboardPage CancelTransfer() {
         cancelButton.click();
         return new DashboardPage();
-
     }
 }

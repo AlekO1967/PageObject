@@ -33,8 +33,8 @@ public class MoneyTransferTest {
     }
 
     @Test
-    void shouldTransferMoneyFromCard2ToCard1() {
-        DashboardPage dashboardPage = new DashboardPage();
+    void shouldTransferMoneyFromCard2toCard1() {
+        DashboardPage dashboardPage = shouldEnterDashboardPage();
         dashboardPage.dashboardPageVisible();
         int expected1 = dashboardPage.getBalanceCard1() + amountValid;
         int expected2 = dashboardPage.getBalanceCard2() - amountValid;
@@ -49,7 +49,7 @@ public class MoneyTransferTest {
 
     @Test
     void shouldTransferMoneyFromCard1ToCard2() {
-        DashboardPage dashboardPage = new DashboardPage();
+        DashboardPage dashboardPage = shouldEnterDashboardPage();
         dashboardPage.dashboardPageVisible();
         int expected1 = dashboardPage.getBalanceCard1() + amountValid;
         int expected2 = dashboardPage.getBalanceCard2() - amountValid;
