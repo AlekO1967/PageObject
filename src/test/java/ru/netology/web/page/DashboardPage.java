@@ -27,17 +27,15 @@ public class DashboardPage {
         return new MoneyTransfer();
     }
 
-    public Integer getBalanceCard1() {
-        String text = balanceCard1.getText();
-        String[] subtext = text.split(":");
-        String balance = subtext[1].substring(0, subtext[1].indexOf("p.")).trim();
-        return Integer.parseInt(balance);
+    public int getBalanceCard1() {
+        String selectedValue = balanceCard1.getText();
+        String balanceCard1 = selectedValue.substring(29, selectedValue.indexOf(" ", 29));
+        return Integer.parseInt(balanceCard1);
     }
 
-    public Integer getBalanceCard2() {
-        String text = balanceCard2.getText();
-        String[] subtext = text.split(":");
-        String balance = subtext[1].substring(0, subtext[1].indexOf("p.")).trim();
-        return Integer.parseInt(balance);
+    public int getBalanceCard2() {
+        String selectedValue = balanceCard2.getText();
+        String balanceCard2 = selectedValue.substring(29, selectedValue.indexOf(" ", 29));
+        return Integer.parseInt(balanceCard2);
     }
 }

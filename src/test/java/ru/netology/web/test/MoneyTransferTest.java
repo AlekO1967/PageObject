@@ -48,11 +48,11 @@ public class MoneyTransferTest {
     }
 
     @Test
-    void shouldTransferMoneyFromCard1ToCard2() {
+    void shouldTransferMoneyFromCard1toCard2() {
         DashboardPage dashboardPage = shouldEnterDashboardPage();
         dashboardPage.dashboardPageVisible();
-        int expected1 = dashboardPage.getBalanceCard1() + amountValid;
-        int expected2 = dashboardPage.getBalanceCard2() - amountValid;
+        int expected1 = dashboardPage.getBalanceCard2() + amountValid;
+        int expected2 = dashboardPage.getBalanceCard1() - amountValid;
         val moneyTransfer = dashboardPage.topUpCard2();
         moneyTransfer.moneyTransferVisible();
         moneyTransfer.setTransferAmount(amountValid);
@@ -63,10 +63,9 @@ public class MoneyTransferTest {
     }
 
     @Test
-    void shouldTransferInvalidAmountFromCard2ToCard1() {
+    void shouldTransferInvalidAmountFromCard2toCard1() {
         DashboardPage dashboardPage = shouldEnterDashboardPage();
         dashboardPage.dashboardPageVisible();
-        dashboardPage.topUpCard1();
         val moneyTransfer = dashboardPage.topUpCard1();
         moneyTransfer.moneyTransferVisible();
         moneyTransfer.setTransferAmount(amountInvalid);
